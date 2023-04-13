@@ -1,50 +1,26 @@
-import React, { FC, useContext, useEffect } from "react";
-import {
-  Routes,
-  Route,
-  BrowserRouter,
-  Navigate,
-} from "react-router-dom";
+import React from "react";
+import { FC, useContext, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { createBrowserHistory } from "history";
-import AuthWrapper from "../views/Auth/AuthWrapper";
-import isAuthenticated from "../shared/components/HOC/requireAuth";
+import isAuthenticated from "../shared/components/HOC/requireAuth"; //  HOC
 import Home from "../views/Home";
-import { RouterProps } from "../shared/types/route.type";
-import AppComponents from "../views/AppComponents";
-import { AppRoutes } from "./routeConstants/appRoutes";
+import Login from "../views/Login/Login";
+
 
 export const appHistory = createBrowserHistory();
 
-const AppRouter = () => {
-  let routes: RouterProps[] = [
-    { path: AppRoutes.AUTH, component: <AuthWrapper /> },
-    { path: AppRoutes.HOME, component: isAuthenticated(<Home/>) },
-  ];
-  if (Boolean(process.env.REACT_APP_UNDER_DEVELOPMENT)) {
-    routes.push({
-      path: AppRoutes.APP_COMPONENTS,
-      component: <AppComponents />,
-    });
-  }
-
+const AppRoutes = () => {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          {routes?.map((route, index) => {
-            return (
-              <Route
-                key={index}
-                path={route?.path}
-                element={route?.component}
-              />
-            );
-          })}
-          {/* <Route path="*" element={<Navigate to={appRoutes.AUTH} />} /> */}
+          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/" element={isAuthenticated(<Home />)} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </div>
   );
 };
 
-export default AppRouter;
+export default AppRoutes;
