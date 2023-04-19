@@ -70,3 +70,4 @@ Contains reusable styles and variables used across the application
 
 ### `src/views/`
 Contains presentational components. Each component has its own `.tsx` and `.scss` files
+# aranpani
