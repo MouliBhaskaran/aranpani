@@ -1,22 +1,23 @@
-import React, { FC } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
-import RegisterForm from "../../views/Auth/RegisterForm";
-import LoginForm from "../../views/Auth/LoginForm";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 import { RouterProps } from "../../shared/types/route.type";
-import { AppRoutes, NavigationRoutes } from "../../routes/routeConstants/appRoutes";
+import { AppRoutes } from "../../routes/routeConstants/appRoutes";
+import LoginForm from "./LoginForm";
+import ForgotPassword from "./ForgotPassword";
+import ResetPassword from "./ResetPassword";
 
 const authRouter = () => {
   const routes: RouterProps[] = [
-    { path: AppRoutes.REGISTER, component: <RegisterForm/> },
-    { path: AppRoutes.LOGIN, component: <LoginForm/> },
+    { path: AppRoutes.LOGIN, component: <LoginForm /> },
+    { path: AppRoutes.FORGOT_PASSWORD, component: <ForgotPassword /> },
+    { path: AppRoutes.RESET_PASSWORD, component: <ResetPassword /> },
   ];
 
   return (
     <Routes>
-      {routes.map(({ component, ...routerProps }) => (
-        <Route {...routerProps} element={component} />
+      {routes.map(({ component, ...routerProps }, index) => (
+        <Route key={index} element={component} {...routerProps} />
       ))}
-      <Route  path="*" element={<Navigate to={NavigationRoutes.LOGIN}/>} />
     </Routes>
   );
 };

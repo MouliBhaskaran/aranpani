@@ -1,47 +1,75 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { NavigationRoutes } from "../../../routes/routeConstants/appRoutes";
+
+import { User } from "../../../models/User/user.model";
+import { LoginFormValidationSchema } from "./validation";
+import UserService from "../../../services/AuthService/auth.service";
+
 import { Formik, Form } from "formik";
 import InputField from "../../../shared/components/InputField";
-import { validationSchema } from "./LoginValidation";
 import { Button } from "antd";
-import UserService from "../../../services/AuthService/auth.service";
-import { useNavigate } from "react-router-dom";
-import { AppRoutes } from "../../../routes/routeConstants/appRoutes";
-import { AuthContext } from "../../../context/AuthContext";
+import "./login.scss";
 
-interface User {
-  email: string;
-  password: string;
-}
+const LoginForm = () => {
+  const { loading, loginUser } = UserService();
 
-const initialValue = {
-  email: "abc@123.com",
-  password: "test@1234",
-};
+  const navigate = useNavigate();
 
-const LoginForm = (props: any) => {
-  const { error, loading, loginUser } = UserService();
+  const handleSubmit = async (values: User) => {
+    const user = Object.assign(new User(), values);
+    await loginUser(user);
+  };
 
+  const handleForgotPassword = () => {
+    navigate(NavigationRoutes.FORGOT_PASSWORD);
+  };
 
-  const onSubmit = (user: User) => {
-    loginUser(user);
+  const formikProps = {
+    initialValues: new User(),
+    validationSchema: LoginFormValidationSchema,
+    onSubmit: handleSubmit,
   };
 
   return (
-    <div>
-      <Formik
-        initialValues={initialValue}
-        onSubmit={onSubmit}
-        validationSchema={validationSchema}
-      >
-        <Form>
-          <InputField type="email" name="email" placeholder="Enter email" />
-          <InputField
-            type="password"
-            name="password"
-            placeholder="Enter password"
-          />
-          <Button htmlType="submit">Login</Button>
-        </Form>
+    <div className="login-form">
+      <Formik {...formikProps}>
+        {({ dirty, isValid }) => (
+          <Form>
+            <h2 className="font-bold">Login to admin portal</h2>
+            <InputField
+              title="Email ID"
+              type="email"
+              name="email"
+              placeholder="Enter email"
+              className="login-form__Email"
+            />
+            <InputField
+              title="Password"
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              className="login-form__Password"
+            />
+            <div className="forget-password__link mb-5">
+              <label
+                htmlFor="forget-password"
+                className="cursor-pointer link"
+                onClick={handleForgotPassword}
+              >
+                Forgot Password ?
+              </label>
+            </div>
+            <Button
+              htmlType="submit"
+              disabled={!isValid || !dirty}
+              loading={loading}
+              className="login-btn"
+            >
+              Login
+            </Button>
+          </Form>
+        )}
       </Formik>
     </div>
   );

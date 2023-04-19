@@ -1,16 +1,17 @@
 export const NavigationRoutes = {
-  AUTH: "/auth",
-  REGISTER: "/auth/register",
-  LOGIN: "/auth/login",
-  HOME: "/"
-};
-
-export const AppRoutes = {
-  AUTH: "/auth",
   REGISTER: "/auth/register",
   LOGIN: "/auth/login",
   FORGOT_PASSWORD: "/auth/forgot-password",
   RESET_PASSWORD: "/auth/reset-password",
+  HOME: "/",
+}
+
+export const AppRoutes = {
+  AUTH: "/auth/*",
+  REGISTER: "/register",
+  LOGIN: "/login",
+  FORGOT_PASSWORD: "/forgot-password",
+  RESET_PASSWORD: "/reset-password",
   HOME: "/",
   PROJECTS: "/projects",
   PROJECT_DETAILS: "/projects/:id",

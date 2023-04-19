@@ -1,31 +1,58 @@
 @import "variables";
 
 /* Input Field */
+
+.input-field {
+  margin-top: 6px;
+}
+
 .ant-input {
   border-radius: $input-border-radius;
   border-color: $input-border-color;
-  &:focus,
-  &:hover {
-    border-color: $input-border-color-hover;
-  }
   &:focus {
     box-shadow: $input-border-box-shadow !important;
+    outline: none;
   }
+}
+
+.ant-input-affix-wrapper {
+  & .ant-input {
+    height: 100% !important;
+  }
+}
+
+.ant-input,
+.ant-input-affix-wrapper {
+  height: 36px;
+  text-indent: 10px;
+}
+
+/* Password */
+.ant-input-password {
+  border-radius: 6px;
+  padding: 0px 11px !important;
 }
 
 /* Button */
 
 .ant-btn {
-  /* Primary button */
+  width: 100%;
   background-color: $button-default-bg-color;
   color: $button-default-text-color;
   border-color: $button-default-border-color;
   border-radius: $button-default-border-radius;
+  height: 36px;
+  /* Primary button */
   &.ant-btn-primary {
     background-color: $button-primary-bg-color;
     color: $button-primary-text-color;
     border-color: $button-primary-border-color;
     border-radius: $button-primary-border-radius;
+    &:disabled {
+      color: $button-primary-text-color;
+      background-color: $button-primary-disabled-bg-color;
+      border-color: $button-primary-disabled-border-color;
+    }
   }
 }
 
@@ -89,10 +116,10 @@
     box-shadow: $select-focus-box-shadow !important;
   }
   .ant-select-selector {
-      border-color: $select-border-color !important;
-      &:hover {
-          border-color: $select-hover-border-color !important;
-      }
+    border-color: $select-border-color !important;
+    &:hover {
+      border-color: $select-hover-border-color !important;
+    }
   }
 
   &.ant-select-open {
@@ -100,4 +127,143 @@
       box-shadow: $select-focus-box-shadow !important;
     }
   }
+}
+
+
+/* Tabs */
+.ant-tabs.ant-tabs-top
+  .ant-tabs-nav
+  .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
+  background-color: #396AFF;
+}
+
+.ant-tabs.ant-tabs-top .ant-tabs-nav .ant-tabs-tab .ant-tabs-tab-btn {
+  color: #7f91b0;
+}
+
+.ant-tabs.ant-tabs-top
+  .ant-tabs-nav
+  .ant-tabs-tab.ant-tabs-tab-active
+  .ant-tabs-tab-btn {
+  color: #396AFF;
+}
+
+/* Select */
+.ant-select {
+  box-shadow: none !important;
+}
+.ant-select:hover {
+  box-shadow: none !important;
+}
+.ant-select i {
+  font-size: 10px !important;
+}
+.ant-select .ant-select-selector {
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+.ant-select .ant-select-selector:hover {
+  box-shadow: none !important;
+}
+
+/* Table */
+.ant-table {
+  border-radius: 10px 10px 0px 0px !important;
+  overflow: hidden;
+}
+.ant-table .ant-table-container .ant-table-thead > tr > th {
+  background-color: #e3e5f2;
+  color: #396AFF;
+  font-family: SFProDisplayBold !important;
+}
+
+/* Pagination */
+.ant-pagination {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.ant-pagination .ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination .ant-pagination-next .ant-pagination-item-link {
+  border: none;
+  outline: none;
+  color: #396AFF;
+}
+.ant-pagination .ant-pagination-item {
+  border: none;
+  outline: none;
+  color: #396AFF;
+}
+.ant-pagination .ant-pagination-item.ant-pagination-item-active {
+  border: 1px solid #396AFF;
+  border-radius: 6px;
+}
+.ant-pagination .ant-pagination-item.ant-pagination-item-active a {
+  color: #396AFF;
+}
+
+.ant-popover-content {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 4px 24px #3e3f5e33;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+.ant-popover-content .ant-popover-arrow {
+  display: none;
+}
+
+.ant-progress-text {
+  color: #83b85c;
+}
+
+.ant-progress-bg {
+  background-color: #83b85c;
+}
+
+.ant-modal-content {
+  padding: 30px 15px;
+  border-radius: 10px;
+}
+.ant-modal-content .ant-modal-close {
+  display: none;
+}
+
+.ant-modal-header {
+  border: none;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.ant-modal-header .ant-modal-title .modal-title {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.ant-modal-header .ant-modal-title .modal-title h2 {
+  font: normal normal bold 24px/29px SF Pro Display;
+  color: #396AFF;
+}
+.ant-modal-header .ant-modal-title .modal-controls i:first-child {
+  padding-right: 15px;
+}
+
+.ant-modal-body {
+  padding-bottom: 0px;
+}
+
+.ant-modal-footer {
+  display: none;
+}
+
+.ant-modal .icon-more,
+.ant-modal .icon-close {
+  cursor: pointer;
+}
+
+.ant-menu-inline {
+  border-right: unset !important;
+}
+
+.ant-picker {
+  padding: 4px 11px 4px 0 !important;
 }

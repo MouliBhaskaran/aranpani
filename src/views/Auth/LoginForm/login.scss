@@ -1,0 +1,32 @@
+.login-form h2 {
+  font-weight: bold !important;
+  color: #343c6a;
+  margin-bottom: 2.2rem;
+}
+
+.login-form .forget-password__link {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 15px !important;
+  font-weight: 600;
+}
+
+.login-form .link:hover {
+  text-decoration: underline;
+}
+
+.login-btn {
+  background-color: #396aff !important;
+  color: #ffffff !important;
+}
+
+.login-form__Email {
+  margin-top: 8px !important;
+  margin-bottom: 32px !important;
+}
+
+.login-form__Password {
+  margin-top: 8px !important;
+  margin-bottom: 32px !important;
+}
+

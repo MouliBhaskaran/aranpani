@@ -1,8 +1,11 @@
+
 /* Color palette */
-$primary-color: #0D494E;
+$primary-color: #396AFF;
 $secondary-color: #006FBA;
 $light-white: #FFFFFF40;
 $primary-light-color: #0D494E10;
+$primary-dark-color: #040930;
+$primary-blur-color: #292D4E;
 $primary-black: #4B4B4B;
 $dark-blue: #22509D;
 $light-grey: #00000015;
@@ -14,41 +17,44 @@ $body-bg: #F5F8FA;
 $table-bg: #F7FAFC;
 $input-bg: #F8FBFC;
 
-/* Component colors */
+/* Component colors */ 
 
-/* Input Field */
-$input-border-color: rgba(0, 0, 0, 0.164);
-$input-border-color-hover: $primary-color;
-$input-border-box-shadow: 0 0 0 2px rgba($color: $primary-color, $alpha: 0.2);
-$input-border-radius: 4px;
+/* Input Field */ 
+$input-border-color: #d6d8e5;
+$input-border-box-shadow: 0 0 0 2px rgba($color: #006FBA, $alpha: 0.2);
+$input-border-radius: 6px;
 
 /* Default Button */
-$button-default-border-color: $primary-color;
+$button-default-border-color: #00d404;
 $button-default-bg-color: white;
-$button-default-text-color: $primary-color;
+$button-default-text-color: #00d404;
 $button-default-border-radius: 4px;
 
 /* Primary Button */
-$button-primary-border-color: $primary-color;
-$button-primary-bg-color: $primary-color;
+$button-primary-border-color: #396aff;
+$button-primary-bg-color: #396aff;
 $button-primary-text-color: white;
-$button-primary-border-radius: 4px;
+$button-primary-border-radius: 6px;
+/* Primary Button - Disabled*/
+$button-primary-disabled-bg-color: rgba(57, 106, 255, 0.7);
+$button-primary-disabled-border-color: rgba(57, 106, 255, 0.7);
+
 
 /* Checkbox */
-$checkbox-bg-color: $primary-color;
-$checkbox-hover-border-color: $primary-color;
+$checkbox-bg-color: #00d404;
+$checkbox-hover-border-color: #00d404; 
 $checkbox-text-color: white;
-$checkbox-hover-text-color: $primary-color;
+$checkbox-hover-text-color: #00d404;
 
 /* Radio */
 $radio-border-color: rgb(202, 202, 202);
-$radio-checked-border-color: $primary-color;
-$radio-checked-bg-color: $primary-color;
+$radio-checked-border-color: #00d404;
+$radio-checked-bg-color: #00d404;
 
 /* Select */
 $select-border-color: rgb(202, 202, 202);
-$select-hover-border-color: $primary-color;
-$select-focus-box-shadow: 0 0 0 2px rgba($color: $primary-color, $alpha: 0.2);
+$select-hover-border-color: #00d404;
+$select-focus-box-shadow: 0 0 0 2px rgba($color: #00d404, $alpha: 0.2);
 
 /* Shadows */
 $primary-shadow: 0 8px 22px #0000001A;

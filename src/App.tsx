@@ -7,11 +7,11 @@ import RequireNetwork from "./shared/components/HOC/requireNetwork";
 
 const App = () => {
   return (
-    <RequireNetwork>
+    // <RequireNetwork>
       <AuthProvider>
         <AppRoutes />
       </AuthProvider>
-    </RequireNetwork>
+    // </RequireNetwork>
   );
 };
 
