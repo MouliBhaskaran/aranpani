@@ -7,7 +7,7 @@
 }
 
 .ant-input {
-  border-radius: $input-border-radius;
+  border-radius: 6px !important;
   border-color: $input-border-color;
   &:focus {
     box-shadow: $input-border-box-shadow !important;
@@ -25,6 +25,7 @@
 .ant-input-affix-wrapper {
   height: 36px;
   text-indent: 10px;
+  border-radius: 6px !important;
 }
 
 /* Password */
@@ -129,12 +130,11 @@
   }
 }
 
-
 /* Tabs */
 .ant-tabs.ant-tabs-top
   .ant-tabs-nav
   .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
-  background-color: #396AFF;
+  background-color: #396aff;
 }
 
 .ant-tabs.ant-tabs-top .ant-tabs-nav .ant-tabs-tab .ant-tabs-tab-btn {
@@ -145,7 +145,7 @@
   .ant-tabs-nav
   .ant-tabs-tab.ant-tabs-tab-active
   .ant-tabs-tab-btn {
-  color: #396AFF;
+  color: #396aff;
 }
 
 /* Select */
@@ -173,7 +173,7 @@
 }
 .ant-table .ant-table-container .ant-table-thead > tr > th {
   background-color: #e3e5f2;
-  color: #396AFF;
+  color: #343c6a;
   font-family: SFProDisplayBold !important;
 }
 
@@ -187,19 +187,19 @@
 .ant-pagination .ant-pagination-next .ant-pagination-item-link {
   border: none;
   outline: none;
-  color: #396AFF;
+  color: #396aff;
 }
 .ant-pagination .ant-pagination-item {
   border: none;
   outline: none;
-  color: #396AFF;
+  color: #396aff;
 }
 .ant-pagination .ant-pagination-item.ant-pagination-item-active {
-  border: 1px solid #396AFF;
+  border: 1px solid #396aff;
   border-radius: 6px;
 }
 .ant-pagination .ant-pagination-item.ant-pagination-item-active a {
-  color: #396AFF;
+  color: #396aff;
 }
 
 .ant-popover-content {
@@ -241,7 +241,7 @@
 }
 .ant-modal-header .ant-modal-title .modal-title h2 {
   font: normal normal bold 24px/29px SF Pro Display;
-  color: #396AFF;
+  color: #396aff;
 }
 .ant-modal-header .ant-modal-title .modal-controls i:first-child {
   padding-right: 15px;

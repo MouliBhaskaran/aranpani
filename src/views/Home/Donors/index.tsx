@@ -1,9 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import "../home.scss"
 const Donors = () => {
   return (
-    <div>Donors</div>
-  )
-}
+    <div>
+      <h1 className="main-heading">Donors</h1>
+    </div>
+  );
+};
 
-export default Donors
+export default Donors;

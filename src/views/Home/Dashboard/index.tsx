@@ -1,9 +1,10 @@
 import React from "react";
 
+import "../home.scss"
 const Dashboard = () => {
   return (
     <div>
-      <h1>Dashboard </h1>
+      <h1 className="main-heading">Dashboard </h1>
     </div>
   );
 };

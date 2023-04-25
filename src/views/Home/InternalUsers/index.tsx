@@ -1,9 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import "../home.scss"
 const InternalUsers = () => {
   return (
-    <div>InternalUsers</div>
-  )
-}
+    <div>
+      <h1 className="main-heading">Internal Users</h1>
+    </div>
+  );
+};
 
-export default InternalUsers
+export default InternalUsers;

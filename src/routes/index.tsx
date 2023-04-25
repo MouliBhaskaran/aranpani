@@ -20,7 +20,7 @@ const AppRouter = () => {
           {routes.map(({ component, ...route }, index) => (
             <Route key={index} {...route} element={component} />
           ))}
-          {/* <Route path="*" element={<Navigate to={AppRoutes.PROJECTS} />} /> */}
+          <Route path="*" element={<Navigate to={AppRoutes.PROJECTS} />} />
         </Routes>
       </BrowserRouter>
     </div>

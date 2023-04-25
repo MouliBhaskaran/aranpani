@@ -12,7 +12,7 @@ export const AppRoutes = {
   LOGIN: "/login",
   FORGOT_PASSWORD: "/forgot-password",
   RESET_PASSWORD: "/reset-password",
-  HOME: "/",
+  HOME: "*",
   PROJECTS: "/projects",
   PROJECT_DETAILS: "/projects/:id",
   DASHBOARD:"/dashboard",
